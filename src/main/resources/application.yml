@@ -1,11 +1,31 @@
 badges:
   baseUrl: 'https://members.scouts.org.uk'
   sections:
+    - name: 'Common'
+      badgeTypes:
+        - name: 'Staged Activity'
+          url: '/supportresources/search/?cat=12,67,777'
+    - name: 'Beavers'
+      badgeTypes:
+        - name: 'Challenge'
+          url: '/supportresources/search/?cat=11,18,775'
+        - name: 'Activity'
+          url: '/supportresources/search/?cat=11,18,774'
     - name: 'Cubs'
       badgeTypes:
         - name: 'Challenge'
           url: '/supportresources/search/?cat=12,67,778'
         - name: 'Activity'
           url: '/supportresources/search/?cat=12,67,776'
-        - name: 'Staged Activity'
-          url: '/supportresources/search/?cat=12,67,777'
+    - name: 'Scouts'
+      badgeTypes:
+        - name: 'Challenge'
+          url: '/supportresources/search/?cat=7,64,781'
+        - name: 'Activity'
+          url: '/supportresources/search/?cat=7,64,779'
+    - name: 'Explorers'
+      badgeTypes:
+        - name: 'Awards'
+          url: '/supportresources/search/?cat=9,88,125'
+        - name: 'Activity'
+          url: '/supportresources/search/?cat=9,88,783'

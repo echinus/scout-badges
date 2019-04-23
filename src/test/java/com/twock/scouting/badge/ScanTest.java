@@ -2,6 +2,7 @@ package com.twock.scouting.badge;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -15,6 +16,7 @@ import java.util.List;
 import java.util.function.Function;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -23,6 +25,7 @@ public class ScanTest {
     private static final String CHALLENGE_HTML = "/cubChallenge.html";
     private static final String ACTIVITY1_HTML = "/cubActivity1.html";
     private static final String ACTIVITY2_HTML = "/cubActivity2.html";
+    private static final String CHALLENGE_CHIEFSCOUT_HTML = "/cubChallengeChiefScout.html";
 
     private static String readText(String file) {
         try {
@@ -57,5 +60,11 @@ public class ScanTest {
         List<Link> links = scan(ACTIVITY1_HTML, ACTIVITY2_HTML).badgeIndex("/");
         assertEquals(38, links.size());
         assertEquals("World Faiths Activity Badge", links.get(links.size() - 1).getName());
+    }
+
+    @Test
+    public void testContent() {
+        Elements chiefScout = scan(CHALLENGE_CHIEFSCOUT_HTML).downloadBadgeInfo("/");
+        assertTrue(chiefScout.toString().trim().startsWith("<h2>Chief Scout's Silver Award</h2>"));
     }
 }
